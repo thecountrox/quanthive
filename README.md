@@ -4,18 +4,18 @@ This project demonstrates a robust FastAPI application with JSON Web Token (JWT)
 
 ## Table of Contents
 
-1.  [Features](https://www.google.com/search?q=%23features)
-2.  [Prerequisites](https://www.google.com/search?q=%23prerequisites)
-3.  [Setup](https://www.google.com/search?q=%23setup)
-    - [Clone the Repository](https://www.google.com/search?q=%23clone-the-repository)
-    - [Docker Files](https://www.google.com/search?q=%23docker-files)
-    - [Set the Secret Key](https://www.google.com/search?q=%23set-the-secret-key)
-4.  [Running the Application](https://www.google.com/search?q=%23running-the-application)
-5.  [API Endpoints](https://www.google.com/search?q=%23api-endpoints)
-6.  [Logging](https://www.google.com/search?q=%23logging)
-7.  [Testing](https://www.google.com/search?q=%23testing)
-    - [Automated Tests (Pytest)](https://www.google.com/search?q=%23automated-tests-pytest)
-    - [Linting & Formatting Checks](https://www.google.com/search?q=%23linting--formatting-checks)
+1.  Features
+2.  Prerequisites
+3.  Setup
+    - Clone the Repository
+    - Docker Files
+    - Set the Secret Key
+4.  Running the Application
+5.  API Endpoints
+6.  Logging
+7.  Testing
+    - Automated Tests
+    - Linting & Formatting Checks
 
 ## Prerequisites
 
@@ -31,8 +31,8 @@ Follow these steps to get the project up and running using Docker Compose.
 ### Clone the Repository
 
 ```bash
-git clone <repository_url> # Replace <repository_url> with your actual repository URL
-cd <project_directory>     # Navigate into your project folder
+git clone https://github.com/thecountrox/quanthive.git
+cd quanthive
 ```
 
 ### Docker Files
@@ -44,16 +44,12 @@ This repository includes:
 
 ### Set the Secret Key
 
-**Crucially**, you need to set the `SECRET_KEY` used for JWT signing. **DO NOT use the example key `ce41f1ac917771b7512b1c54137b622a421e5d914d7295ec2d7553067bf0693a` in production.** Generate a strong, random 32-byte (or longer) key.
-
-For Docker Compose, the recommended way to manage this secret is via a `.env` file in the same directory as your `docker-compose.yml`.
+**Crucially**, you need to set the `SECRET_KEY` used for JWT signing. You can generate this using `openssl rand -hex 32`
 
 1.  Create a file named `.env` in your project root:
     ```
     SECRET_KEY="your_very_strong_secret_key_here_at_least_32_bytes_long"
     ```
-    **Important**: Add `.env` to your `.gitignore` file to prevent it from being committed to version control.
-2.  Your `docker-compose.yml` should then reference this variable (e.g., in the `environment` section of your service definition).
 
 ## Running the Application
 
