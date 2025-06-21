@@ -110,8 +110,7 @@ Each log entry includes:
 - Request Duration
 - A message indicating success or failure.
 
-**Security Warning**: Logging full JWTs can expose sensitive information if your log files (or Docker container logs) are compromised. In a production environment, consider hashing or truncating the JWT in logs, or ensure extremely strict access controls on your Docker logging drivers.
-
+**Security Warning**: Logging full JWTs can expose sensitive information in our log file, In a real world environment we should not do this. This is done for demonstration purposes.
 ## Testing
 
 The project comes with a comprehensive suite of automated tests using `pytest` to ensure all features work as expected. These tests are designed to run within the Docker environment.
